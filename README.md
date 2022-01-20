@@ -14,6 +14,7 @@ The 5 principles of SOLID are:
 
 
 1.S: Single-responsibility principle:------------------->
+------------------------------------
 
 “A class should only have a single responsibility, that is, only changes to one part of the software’s specification should be able to affect the specification of the class.”
 
@@ -178,9 +179,7 @@ Most implementations of LSP involve polymorphism to create class-specific behavi
 
 This example does not follow LSP:
 
-namespace SOLID_PRINCIPLES.LSP
-{
-    class Program
+  class Program
     {
         static void Main(string[] args)
         {
@@ -201,8 +200,10 @@ namespace SOLID_PRINCIPLES.LSP
         {
             return "Orange";
         }
-    }
+   }
 }
+
+
 This does not follow LSP because the Orange class could not replace the Apple class without altering the program output. The GetColor() method is overridden by the Orange class and therefore would return that an apple is orange.
 
 To change this, we’ll add an abstract class for Fruit that both Apple and Orange will implement.
@@ -238,13 +239,16 @@ namespace SOLID_PRINCIPLES.LSP
         }
     }
 }
+
+
 Now, any subtype (Apple or Orange) of the Fruit class can be replaced with the other subtype without error thanks to the class-specific behavior of GetColor(). As a result, this program now achieves the LSP principle.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
 4. I: Interface segregation principle
-svg viewer
+----------------------------------------
+
 ISP: Only inherit applicable methods
 “Many client-specific interfaces are better than one general-purpose interface.”
 
